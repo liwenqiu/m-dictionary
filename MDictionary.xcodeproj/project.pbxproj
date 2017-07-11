@@ -8,18 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		02B2B85B1F120643000E3980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B85A1F120643000E3980 /* AppDelegate.swift */; };
-		02B2B85D1F120643000E3980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B85C1F120643000E3980 /* ViewController.swift */; };
-		02B2B85F1F120643000E3980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02B2B85E1F120643000E3980 /* Assets.xcassets */; };
-		02B2B8621F120643000E3980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B2B8601F120643000E3980 /* Main.storyboard */; };
+		02B2B86B1F1206B3000E3980 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2B8691F1206B3000E3980 /* Main.xib */; };
+		02B2B8711F121BAF000E3980 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B8701F121BAF000E3980 /* EventMonitor.swift */; };
+		02B2B8731F122910000E3980 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B8721F122910000E3980 /* PopoverViewController.swift */; };
+		02B2B8781F1317AA000E3980 /* StringMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B8771F1317AA000E3980 /* StringMD5.swift */; };
+		02B2B87E1F13315B000E3980 /* YouDaoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B87D1F13315B000E3980 /* YouDaoService.swift */; };
+		02E389961F14E7EA00F32EEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E389951F14E7EA00F32EEA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02B2B8571F120643000E3980 /* MDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B2B85A1F120643000E3980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		02B2B85C1F120643000E3980 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		02B2B85E1F120643000E3980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		02B2B8611F120643000E3980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02B2B8631F120643000E3980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02B2B86A1F1206B3000E3980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Main.xib; sourceTree = "<group>"; };
+		02B2B8701F121BAF000E3980 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		02B2B8721F122910000E3980 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		02B2B8771F1317AA000E3980 /* StringMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMD5.swift; sourceTree = "<group>"; };
+		02B2B8791F131BD5000E3980 /* MDictionary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDictionary-Bridging-Header.h"; sourceTree = "<group>"; };
+		02B2B87D1F13315B000E3980 /* YouDaoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouDaoService.swift; sourceTree = "<group>"; };
+		02E389951F14E7EA00F32EEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +59,15 @@
 		02B2B8591F120643000E3980 /* MDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				02E389951F14E7EA00F32EEA /* Assets.xcassets */,
 				02B2B85A1F120643000E3980 /* AppDelegate.swift */,
-				02B2B85C1F120643000E3980 /* ViewController.swift */,
-				02B2B85E1F120643000E3980 /* Assets.xcassets */,
-				02B2B8601F120643000E3980 /* Main.storyboard */,
 				02B2B8631F120643000E3980 /* Info.plist */,
+				02B2B8691F1206B3000E3980 /* Main.xib */,
+				02B2B8701F121BAF000E3980 /* EventMonitor.swift */,
+				02B2B8721F122910000E3980 /* PopoverViewController.swift */,
+				02B2B8771F1317AA000E3980 /* StringMD5.swift */,
+				02B2B8791F131BD5000E3980 /* MDictionary-Bridging-Header.h */,
+				02B2B87D1F13315B000E3980 /* YouDaoService.swift */,
 			);
 			path = MDictionary;
 			sourceTree = "<group>";
@@ -94,6 +105,7 @@
 					02B2B8561F120643000E3980 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = KABP33649N;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -121,8 +133,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02B2B85F1F120643000E3980 /* Assets.xcassets in Resources */,
-				02B2B8621F120643000E3980 /* Main.storyboard in Resources */,
+				02E389961F14E7EA00F32EEA /* Assets.xcassets in Resources */,
+				02B2B86B1F1206B3000E3980 /* Main.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02B2B85D1F120643000E3980 /* ViewController.swift in Sources */,
+				02B2B8731F122910000E3980 /* PopoverViewController.swift in Sources */,
+				02B2B8781F1317AA000E3980 /* StringMD5.swift in Sources */,
+				02B2B8711F121BAF000E3980 /* EventMonitor.swift in Sources */,
+				02B2B87E1F13315B000E3980 /* YouDaoService.swift in Sources */,
 				02B2B85B1F120643000E3980 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,12 +156,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		02B2B8601F120643000E3980 /* Main.storyboard */ = {
+		02B2B8691F1206B3000E3980 /* Main.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				02B2B8611F120643000E3980 /* Base */,
+				02B2B86A1F1206B3000E3980 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -248,12 +263,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KABP33649N;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MDictionary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.liwenqiu.MDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MDictionary/MDictionary-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -262,12 +282,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KABP33649N;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MDictionary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.liwenqiu.MDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MDictionary/MDictionary-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -291,6 +315,7 @@
 				02B2B8681F120643000E3980 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
