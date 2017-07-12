@@ -58,7 +58,12 @@ struct DictionaryItem {
 }
 
 typealias QueryError = (message: String, cause: String?)
-typealias QueryResult = (DictionaryItem?, QueryError?) -> ()
+
+
+protocol QueryService {
+
+    func query(_ word: String, completion: @escaping (DictionaryItem?, QueryError?) -> Void)
+}
 
 
 class PopoverViewController: NSViewController {
@@ -91,7 +96,7 @@ class PopoverViewController: NSViewController {
         
         print("Start Query YouDao")
         self.originalQueryWord = self.textField.stringValue
-        youdao.getQueryResult(q: self.textField.stringValue) { item, error in
+        youdao.query(self.textField.stringValue) { item, error in
             if let error = error {
                 print("Error: \(error.message)")
                 return

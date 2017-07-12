@@ -9,14 +9,14 @@
 import Foundation
 
 
-
-
-class YouDaoService {
+class YouDaoService: QueryService {
     
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionTask?
     
-    func getQueryResult(q: String, completion: @escaping QueryResult) {
+    
+    
+    func query(_ word: String, completion:  @escaping (DictionaryItem?, QueryError?) -> Void) {
         
         guard var urlComponents = URLComponents(string: "https://openapi.youdao.com/api") else { return }
         
@@ -26,8 +26,8 @@ class YouDaoService {
         let to = "zh_CHS"
         let appKey = "558dbff32a346334"
         let salt = "2"
-        let sign = (appKey + q + salt + "BuXCCS1wbmD518cS7atAL1bl3jCwlzwH").MD5
-        urlComponents.query = "q=\(q)&from=\(from)&to=\(to)&appKey=\(appKey)&salt=\(salt)&sign=\(sign)"
+        let sign = (appKey + word + salt + "BuXCCS1wbmD518cS7atAL1bl3jCwlzwH").MD5
+        urlComponents.query = "q=\(word)&from=\(from)&to=\(to)&appKey=\(appKey)&salt=\(salt)&sign=\(sign)"
         
         guard let url = urlComponents.url else { return }
         
@@ -64,6 +64,7 @@ class YouDaoService {
     }
     
 }
+
 
 
 
