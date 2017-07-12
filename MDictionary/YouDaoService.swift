@@ -8,8 +8,7 @@
 
 import Foundation
 
-typealias QueryError = (message: String, cause: String?)
-typealias QueryResult = (TranslationResult?, QueryError?) -> ()
+
 
 
 class YouDaoService {
@@ -48,7 +47,8 @@ class YouDaoService {
             
             if let data = data {
                 do {
-                    completion(try TranslationResult.init(data), nil)
+                    
+                    completion(try DictionaryItem.init(youdao: data), nil)
                 } catch YouDaoJSONError.error(let errorCode) {
                     completion(nil, (message: "ErrorCode: \(errorCode)", cause: nil))
                 } catch YouDaoJSONError.invalidFormat(let cause) {
@@ -67,17 +67,15 @@ class YouDaoService {
 
 
 
-struct TranslationResult {
+enum YouDaoJSONError: Error {
+    case invalidFormat(String)
+    case error(String)
+}
+
+
+fileprivate extension DictionaryItem {
     
-    let query: String
-    let translation: [String]
-    let explains: [String]?
-    let phonetic: String?
-    let ukPhonetic: String?
-    let usPhonetic: String?
-    
-    init(_ data: Data) throws {
-        
+    init(youdao data: Data) throws {
         let root = try JSONSerialization.jsonObject(with: data, options: [])
         guard let json = root as? [String: AnyObject] else {
             throw YouDaoJSONError.invalidFormat("JSON root must be Object")
@@ -95,52 +93,39 @@ struct TranslationResult {
             throw YouDaoJSONError.invalidFormat("translation missing")
         }
         
+        self.version = "1.0"
         self.query = query
-        self.translation = translation
+        self.from = .en
+        self.to = .zh
         
         if let basic = json["basic"] as? [String: AnyObject] {
             
             // explains
             if let explains = basic["explains"] as? [String] {
-                self.explains = explains
+                self.explanations = explains
             } else {
-                self.explains = nil
+                self.explanations = [""]
             }
             
-            // phonetic
+            var pronunciations = [PronunciationDialectCode: String]()
             if let phonetic = basic["phonetic"] as? String {
-                self.phonetic = phonetic
-            } else {
-                self.phonetic = nil
+                pronunciations[.cm] = phonetic
             }
-            
-            // us-phonetic
             if let usPhonetic = basic["us-phonetic"] as? String {
-                self.usPhonetic = usPhonetic
-            } else {
-                self.usPhonetic = nil
+                pronunciations[.us] = usPhonetic
             }
-            
-            // uk-phonetic
             if let ukPhonetic = basic["uk-phonetic"] as? String {
-                self.ukPhonetic = ukPhonetic
-            } else {
-                self.ukPhonetic = nil
+                pronunciations[.uk] = ukPhonetic
             }
-            
+            if pronunciations.count > 0 {
+                self.pronunciations = pronunciations
+            } else {
+                self.pronunciations = nil
+            }
         } else {
-            self.explains = nil
-            self.phonetic = nil
-            self.ukPhonetic = nil
-            self.usPhonetic = nil
+            self.explanations = translation
+            self.pronunciations = nil
         }
     }
+
 }
-
-
-enum YouDaoJSONError: Error {
-    case invalidFormat(String)
-    case error(String)
-}
-
-

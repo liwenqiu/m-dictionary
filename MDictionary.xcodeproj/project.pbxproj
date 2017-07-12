@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		02B2B85B1F120643000E3980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B85A1F120643000E3980 /* AppDelegate.swift */; };
 		02B2B86B1F1206B3000E3980 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2B8691F1206B3000E3980 /* Main.xib */; };
-		02B2B8711F121BAF000E3980 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B8701F121BAF000E3980 /* EventMonitor.swift */; };
 		02B2B8731F122910000E3980 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B8721F122910000E3980 /* PopoverViewController.swift */; };
 		02B2B8781F1317AA000E3980 /* StringMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B8771F1317AA000E3980 /* StringMD5.swift */; };
 		02B2B87E1F13315B000E3980 /* YouDaoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B87D1F13315B000E3980 /* YouDaoService.swift */; };
@@ -21,7 +20,6 @@
 		02B2B85A1F120643000E3980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02B2B8631F120643000E3980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02B2B86A1F1206B3000E3980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Main.xib; sourceTree = "<group>"; };
-		02B2B8701F121BAF000E3980 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		02B2B8721F122910000E3980 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		02B2B8771F1317AA000E3980 /* StringMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMD5.swift; sourceTree = "<group>"; };
 		02B2B8791F131BD5000E3980 /* MDictionary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDictionary-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -61,10 +59,9 @@
 			children = (
 				02E389951F14E7EA00F32EEA /* Assets.xcassets */,
 				02B2B85A1F120643000E3980 /* AppDelegate.swift */,
+				02B2B8721F122910000E3980 /* PopoverViewController.swift */,
 				02B2B8631F120643000E3980 /* Info.plist */,
 				02B2B8691F1206B3000E3980 /* Main.xib */,
-				02B2B8701F121BAF000E3980 /* EventMonitor.swift */,
-				02B2B8721F122910000E3980 /* PopoverViewController.swift */,
 				02B2B8771F1317AA000E3980 /* StringMD5.swift */,
 				02B2B8791F131BD5000E3980 /* MDictionary-Bridging-Header.h */,
 				02B2B87D1F13315B000E3980 /* YouDaoService.swift */,
@@ -147,7 +144,6 @@
 			files = (
 				02B2B8731F122910000E3980 /* PopoverViewController.swift in Sources */,
 				02B2B8781F1317AA000E3980 /* StringMD5.swift in Sources */,
-				02B2B8711F121BAF000E3980 /* EventMonitor.swift in Sources */,
 				02B2B87E1F13315B000E3980 /* YouDaoService.swift in Sources */,
 				02B2B85B1F120643000E3980 /* AppDelegate.swift in Sources */,
 			);

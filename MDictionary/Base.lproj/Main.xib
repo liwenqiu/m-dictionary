@@ -26,9 +26,10 @@
                 <outlet property="view" destination="gHk-7f-FxR" id="RyB-vF-Sfi"/>
             </connections>
         </viewController>
-        <popover id="xjK-90-nF0">
+        <popover behavior="t" id="xjK-90-nF0">
             <connections>
                 <outlet property="contentViewController" destination="EAh-cM-hy8" id="4Ju-o5-Myn"/>
+                <outlet property="delegate" destination="EAh-cM-hy8" id="R8k-Q6-VkN"/>
             </connections>
         </popover>
         <customView id="gHk-7f-FxR" userLabel="PopoverView">
