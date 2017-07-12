@@ -12,6 +12,7 @@
 		02B2B8731F122910000E3980 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B8721F122910000E3980 /* PopoverViewController.swift */; };
 		02B2B8781F1317AA000E3980 /* StringMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B8771F1317AA000E3980 /* StringMD5.swift */; };
 		02B2B87E1F13315B000E3980 /* YouDaoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B87D1F13315B000E3980 /* YouDaoService.swift */; };
+		02D47C001F1673E9007C1676 /* DictionaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D47BFF1F1673E9007C1676 /* DictionaryItem.swift */; };
 		02E389961F14E7EA00F32EEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E389951F14E7EA00F32EEA /* Assets.xcassets */; };
 		743FC944E51BF3EE4CC7C78F /* libPods-MDictionary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29405A660C0DD3EAE21A9BB1 /* libPods-MDictionary.a */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 		02B2B8771F1317AA000E3980 /* StringMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMD5.swift; sourceTree = "<group>"; };
 		02B2B8791F131BD5000E3980 /* MDictionary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDictionary-Bridging-Header.h"; sourceTree = "<group>"; };
 		02B2B87D1F13315B000E3980 /* YouDaoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouDaoService.swift; sourceTree = "<group>"; };
+		02D47BFF1F1673E9007C1676 /* DictionaryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryItem.swift; sourceTree = "<group>"; };
 		02E389951F14E7EA00F32EEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29405A660C0DD3EAE21A9BB1 /* libPods-MDictionary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MDictionary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9A864293214B05A3D62518 /* Pods-MDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDictionary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDictionary/Pods-MDictionary.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				02B2B8771F1317AA000E3980 /* StringMD5.swift */,
 				02B2B8791F131BD5000E3980 /* MDictionary-Bridging-Header.h */,
 				02B2B87D1F13315B000E3980 /* YouDaoService.swift */,
+				02D47BFF1F1673E9007C1676 /* DictionaryItem.swift */,
 			);
 			path = MDictionary;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				02B2B8731F122910000E3980 /* PopoverViewController.swift in Sources */,
 				02B2B8781F1317AA000E3980 /* StringMD5.swift in Sources */,
 				02B2B87E1F13315B000E3980 /* YouDaoService.swift in Sources */,
+				02D47C001F1673E9007C1676 /* DictionaryItem.swift in Sources */,
 				02B2B85B1F120643000E3980 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

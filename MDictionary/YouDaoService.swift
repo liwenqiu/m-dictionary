@@ -46,6 +46,7 @@ class YouDaoService: QueryService {
             
             
             if let data = data {
+                //print(String.init(data: data, encoding: .utf8)!)
                 do {
                     
                     completion(try DictionaryItem.init(youdao: data), nil)
@@ -76,7 +77,7 @@ enum YouDaoJSONError: Error {
 
 fileprivate extension DictionaryItem {
     
-    init(youdao data: Data) throws {
+    init?(youdao data: Data) throws {
         let root = try JSONSerialization.jsonObject(with: data, options: [])
         guard let json = root as? [String: AnyObject] else {
             throw YouDaoJSONError.invalidFormat("JSON root must be Object")
@@ -90,8 +91,12 @@ fileprivate extension DictionaryItem {
         guard let query = json["query"] as? String else {
             throw YouDaoJSONError.invalidFormat("query missing")
         }
-        guard let translation = json["translation"] as? [String] else {
-            throw YouDaoJSONError.invalidFormat("translation missing")
+        //guard let translation = json["translation"] as? [String] else {
+        //    throw YouDaoJSONError.invalidFormat("translation missing")
+        //}
+        guard let basic = json["basic"] as? [String: AnyObject],
+              let explains = basic["explains"] as? [String] else {
+                return nil
         }
         
         self.version = "1.0"
@@ -99,32 +104,21 @@ fileprivate extension DictionaryItem {
         self.from = .en
         self.to = .zh
         
-        if let basic = json["basic"] as? [String: AnyObject] {
+        self.explanations = explains
             
-            // explains
-            if let explains = basic["explains"] as? [String] {
-                self.explanations = explains
-            } else {
-                self.explanations = [""]
-            }
-            
-            var pronunciations = [PronunciationDialectCode: String]()
-            if let phonetic = basic["phonetic"] as? String {
-                pronunciations[.cm] = phonetic
-            }
-            if let usPhonetic = basic["us-phonetic"] as? String {
-                pronunciations[.us] = usPhonetic
-            }
-            if let ukPhonetic = basic["uk-phonetic"] as? String {
-                pronunciations[.uk] = ukPhonetic
-            }
-            if pronunciations.count > 0 {
-                self.pronunciations = pronunciations
-            } else {
-                self.pronunciations = nil
-            }
+        var pronunciations = [PronunciationDialectCode: String]()
+        if let phonetic = basic["phonetic"] as? String {
+            pronunciations[.cm] = phonetic
+        }
+        if let usPhonetic = basic["us-phonetic"] as? String {
+            pronunciations[.us] = usPhonetic
+        }
+        if let ukPhonetic = basic["uk-phonetic"] as? String {
+            pronunciations[.uk] = ukPhonetic
+        }
+        if pronunciations.count > 0 {
+            self.pronunciations = pronunciations
         } else {
-            self.explanations = translation
             self.pronunciations = nil
         }
     }

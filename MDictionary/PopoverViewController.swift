@@ -8,70 +8,11 @@
 
 import Cocoa
 
-enum LanguageCode {
-    case en
-    case zh
-}
-
-enum PronunciationDialectCode {
-    case cm
-    case uk
-    case us
-}
-
-struct DictionaryItem {
-    let version:        String
-    let query:          String
-    let from:           LanguageCode
-    let to:             LanguageCode
-    
-    let explanations:   [String]
-    let pronunciations: [PronunciationDialectCode: String]?
-    
-    
-    func joinedPronunciations() -> String? {
-        guard let pronunciations = self.pronunciations else { return nil }
-        
-        var results = [String]()
-        
-        if let us = pronunciations[PronunciationDialectCode.us] {
-            results.append("美 [\(us)]")
-        }
-        if let uk = pronunciations[.uk] {
-            results.append("英 [\(uk)]")
-        }
-        if let cm = pronunciations[.cm], results.count == 0 {
-            results.append("[\(cm)]")
-        }
-        
-        if results.count > 0 {
-            return results.joined(separator: " ")
-        }
-        
-        return nil
-    }
-    
-    
-    func joinedExplanations() -> String {
-        return self.explanations.joined(separator: "\n")
-    }
-}
-
-typealias QueryError = (message: String, cause: String?)
-
-
-protocol QueryService {
-
-    func query(_ word: String, completion: @escaping (DictionaryItem?, QueryError?) -> Void)
-}
-
 
 class PopoverViewController: NSViewController {
-    
-    let escapeKeyCode: UInt16 = 53
 
     @IBOutlet weak var textField: NSTextField!
-    @IBOutlet weak var textView: NSTextView!
+    @IBOutlet weak var textView:  NSTextView!
     
     var originalQueryWord = ""
     
@@ -80,13 +21,11 @@ class PopoverViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        
         self.textView.font = NSFont(name: "Menlo", size: 12)
     }
     
     
     @IBAction func query(sender: AnyObject) {
-        
         guard self.textField.stringValue.characters.count > 0 else {
             return
         }
@@ -94,32 +33,35 @@ class PopoverViewController: NSViewController {
             return
         }
         
-        print("Start Query YouDao")
         self.originalQueryWord = self.textField.stringValue
+        
         youdao.query(self.textField.stringValue) { item, error in
-            if let error = error {
-                print("Error: \(error.message)")
+            guard error == nil else {
+                self.asynUpdateTextView(content: "\(error!.message)\n\n\(error!.cause ?? "unknown cause")")
                 return
             }
-            
-            if let item = item {
-                
-                let string: String
-                if let pronunciations = item.joinedPronunciations() {
-                    string = "\(pronunciations)\n\n\(item.joinedExplanations())"
-                } else {
-                    string = item.joinedExplanations()
-                }
-                
-                DispatchQueue.main.async {
-                    self.textView.string = string
-                }
+            guard let item = item else {
+                self.asynUpdateTextView(content: "Not Found")
+                return
             }
+
+            let string: String
+            if let pronunciations = item.joinedPronunciations() {
+                string = "\(pronunciations)\n\n\(item.joinedExplanations())"
+            } else {
+                string = item.joinedExplanations()
+            }
+            
+            self.asynUpdateTextView(content: string)
         }
         
     }
     
-
+    func asynUpdateTextView(content: String) {
+        DispatchQueue.main.async {
+            self.textView.string = content
+        }
+    }
     
     @IBAction func quit(sender: AnyObject) {
         NSApplication.shared().terminate(sender)
