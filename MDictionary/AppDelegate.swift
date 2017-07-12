@@ -24,6 +24,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem.image = statusBarImage
         statusBarItem.highlightMode = true
         statusBarItem.button!.action = #selector(togglePopover(sender:))
+        
+        // MASShortcut
+        
+        let shortcut = MASShortcut.init(keyCode: UInt(kVK_F6), modifierFlags: NSEventModifierFlags.shift.rawValue)
+        MASShortcutMonitor.shared().register(shortcut, withAction: {
+            self.togglePopover(sender: self.statusBarItem.button)
+        })
     }
  
     
@@ -32,6 +39,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
         popover.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
+        
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

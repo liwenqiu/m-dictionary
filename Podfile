@@ -1,0 +1,4 @@
+
+target 'MDictionary'
+
+pod 'MASShortcut'
