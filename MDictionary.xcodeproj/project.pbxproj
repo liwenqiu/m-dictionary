@@ -13,9 +13,38 @@
 		02B2B8781F1317AA000E3980 /* StringMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B8771F1317AA000E3980 /* StringMD5.swift */; };
 		02B2B87E1F13315B000E3980 /* YouDaoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2B87D1F13315B000E3980 /* YouDaoService.swift */; };
 		02D47C001F1673E9007C1676 /* DictionaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D47BFF1F1673E9007C1676 /* DictionaryItem.swift */; };
+		02D47C031F17025B007C1676 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D47C021F17025B007C1676 /* CloudKit.framework */; };
+		02D47D071F185908007C1676 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D47D061F185908007C1676 /* AppDelegate.swift */; };
+		02D47D091F185908007C1676 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D47D081F185908007C1676 /* ViewController.swift */; };
+		02D47D0B1F185908007C1676 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D47D0A1F185908007C1676 /* Assets.xcassets */; };
+		02D47D0E1F185908007C1676 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D47D0C1F185908007C1676 /* Main.storyboard */; };
+		02D47D141F185940007C1676 /* MDictionaryPreferences.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02D47D041F185908007C1676 /* MDictionaryPreferences.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		02E389961F14E7EA00F32EEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E389951F14E7EA00F32EEA /* Assets.xcassets */; };
 		743FC944E51BF3EE4CC7C78F /* libPods-MDictionary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29405A660C0DD3EAE21A9BB1 /* libPods-MDictionary.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02D47D151F185A48007C1676 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02B2B84F1F120643000E3980 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02D47D031F185908007C1676;
+			remoteInfo = MDictionaryPreferences;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		02D47D131F185928007C1676 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ../Preferences;
+			dstSubfolderSpec = 7;
+			files = (
+				02D47D141F185940007C1676 /* MDictionaryPreferences.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02B2B8571F120643000E3980 /* MDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +56,14 @@
 		02B2B8791F131BD5000E3980 /* MDictionary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDictionary-Bridging-Header.h"; sourceTree = "<group>"; };
 		02B2B87D1F13315B000E3980 /* YouDaoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouDaoService.swift; sourceTree = "<group>"; };
 		02D47BFF1F1673E9007C1676 /* DictionaryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryItem.swift; sourceTree = "<group>"; };
+		02D47C011F170256007C1676 /* MDictionary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MDictionary.entitlements; sourceTree = "<group>"; };
+		02D47C021F17025B007C1676 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		02D47D041F185908007C1676 /* MDictionaryPreferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDictionaryPreferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02D47D061F185908007C1676 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02D47D081F185908007C1676 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02D47D0A1F185908007C1676 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02D47D0D1F185908007C1676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02D47D0F1F185908007C1676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02E389951F14E7EA00F32EEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29405A660C0DD3EAE21A9BB1 /* libPods-MDictionary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MDictionary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9A864293214B05A3D62518 /* Pods-MDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDictionary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDictionary/Pods-MDictionary.release.xcconfig"; sourceTree = "<group>"; };
@@ -39,6 +76,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				743FC944E51BF3EE4CC7C78F /* libPods-MDictionary.a in Frameworks */,
+				02D47C031F17025B007C1676 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02D47D011F185908007C1676 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				02B2B8591F120643000E3980 /* MDictionary */,
+				02D47D051F185908007C1676 /* MDictionaryPreferences */,
 				02B2B8581F120643000E3980 /* Products */,
 				930D74D7B1DF7079DBEF5BFB /* Pods */,
 				CFECA6E83A244BDB175BCEAA /* Frameworks */,
@@ -59,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				02B2B8571F120643000E3980 /* MDictionary.app */,
+				02D47D041F185908007C1676 /* MDictionaryPreferences.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +113,7 @@
 		02B2B8591F120643000E3980 /* MDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				02D47C011F170256007C1676 /* MDictionary.entitlements */,
 				02E389951F14E7EA00F32EEA /* Assets.xcassets */,
 				02B2B85A1F120643000E3980 /* AppDelegate.swift */,
 				02B2B8721F122910000E3980 /* PopoverViewController.swift */,
@@ -77,6 +125,18 @@
 				02D47BFF1F1673E9007C1676 /* DictionaryItem.swift */,
 			);
 			path = MDictionary;
+			sourceTree = "<group>";
+		};
+		02D47D051F185908007C1676 /* MDictionaryPreferences */ = {
+			isa = PBXGroup;
+			children = (
+				02D47D061F185908007C1676 /* AppDelegate.swift */,
+				02D47D081F185908007C1676 /* ViewController.swift */,
+				02D47D0A1F185908007C1676 /* Assets.xcassets */,
+				02D47D0C1F185908007C1676 /* Main.storyboard */,
+				02D47D0F1F185908007C1676 /* Info.plist */,
+			);
+			path = MDictionaryPreferences;
 			sourceTree = "<group>";
 		};
 		930D74D7B1DF7079DBEF5BFB /* Pods */ = {
@@ -91,6 +151,7 @@
 		CFECA6E83A244BDB175BCEAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02D47C021F17025B007C1676 /* CloudKit.framework */,
 				29405A660C0DD3EAE21A9BB1 /* libPods-MDictionary.a */,
 			);
 			name = Frameworks;
@@ -109,14 +170,33 @@
 				02B2B8551F120643000E3980 /* Resources */,
 				A89838ADD278D2CF411D50AC /* [CP] Embed Pods Frameworks */,
 				EBE88F66DF438B53AC142F2E /* [CP] Copy Pods Resources */,
+				02D47D131F185928007C1676 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02D47D161F185A48007C1676 /* PBXTargetDependency */,
+			);
+			name = MDictionary;
+			productName = MDictionary;
+			productReference = 02B2B8571F120643000E3980 /* MDictionary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		02D47D031F185908007C1676 /* MDictionaryPreferences */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02D47D121F185908007C1676 /* Build configuration list for PBXNativeTarget "MDictionaryPreferences" */;
+			buildPhases = (
+				02D47D001F185908007C1676 /* Sources */,
+				02D47D011F185908007C1676 /* Frameworks */,
+				02D47D021F185908007C1676 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MDictionary;
-			productName = MDictionary;
-			productReference = 02B2B8571F120643000E3980 /* MDictionary.app */;
+			name = MDictionaryPreferences;
+			productName = MDictionaryPreferences;
+			productReference = 02D47D041F185908007C1676 /* MDictionaryPreferences.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,6 +213,22 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = KABP33649N;
 						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					02D47D031F185908007C1676 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = KABP33649N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -151,6 +247,7 @@
 			projectRoot = "";
 			targets = (
 				02B2B8561F120643000E3980 /* MDictionary */,
+				02D47D031F185908007C1676 /* MDictionaryPreferences */,
 			);
 		};
 /* End PBXProject section */
@@ -162,6 +259,15 @@
 			files = (
 				02E389961F14E7EA00F32EEA /* Assets.xcassets in Resources */,
 				02B2B86B1F1206B3000E3980 /* Main.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02D47D021F185908007C1676 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02D47D0B1F185908007C1676 /* Assets.xcassets in Resources */,
+				02D47D0E1F185908007C1676 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +334,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02D47D001F185908007C1676 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02D47D091F185908007C1676 /* ViewController.swift in Sources */,
+				02D47D071F185908007C1676 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02D47D161F185A48007C1676 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02D47D031F185908007C1676 /* MDictionaryPreferences */;
+			targetProxy = 02D47D151F185A48007C1676 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		02B2B8691F1206B3000E3980 /* Main.xib */ = {
@@ -237,6 +360,14 @@
 				02B2B86A1F1206B3000E3980 /* Base */,
 			);
 			name = Main.xib;
+			sourceTree = "<group>";
+		};
+		02D47D0C1F185908007C1676 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02D47D0D1F185908007C1676 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -340,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MDictionary/MDictionary.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -360,6 +492,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MDictionary/MDictionary.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -369,6 +502,38 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MDictionary/MDictionary-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		02D47D101F185908007C1676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KABP33649N;
+				INFOPLIST_FILE = MDictionaryPreferences/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.liwenqiu.MDictionaryPreferences;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		02D47D111F185908007C1676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KABP33649N;
+				INFOPLIST_FILE = MDictionaryPreferences/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.liwenqiu.MDictionaryPreferences;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -393,6 +558,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		02D47D121F185908007C1676 /* Build configuration list for PBXNativeTarget "MDictionaryPreferences" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02D47D101F185908007C1676 /* Debug */,
+				02D47D111F185908007C1676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

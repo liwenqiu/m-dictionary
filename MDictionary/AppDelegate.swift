@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import CloudKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -40,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         popover.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
         
-        
+        self.loadVocabCollector()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -64,6 +65,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             showPopover(sender: sender)
         }
+    }
+    
+    func loadVocabCollector() {
+        
+        let cloudContainer = CKContainer.default()
+        let privateDatabase = cloudContainer.privateCloudDatabase
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "VocabCollector", predicate: predicate)
+        
+        let queryOperation = CKQueryOperation(query: query)
+        queryOperation.desiredKeys = ["title"]
+        queryOperation.queuePriority = .veryHigh
+        
+        queryOperation.recordFetchedBlock = { (record: CKRecord!) -> Void in
+            if let collector = record, let title = collector["title"] as? String {
+                print("Fetched VocabCollector: \(title)")
+            }
+        }
+        queryOperation.queryCompletionBlock = { (cursor, error) -> Void in
+            if let error = error {
+                print("Failed to get data from iCloud - \(error.localizedDescription)")
+                return
+            }
+            
+            print("Successfully retrieve the collector from iCloud")
+        }
+        
+        privateDatabase.add(queryOperation)
     }
 }
 

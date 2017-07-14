@@ -66,6 +66,19 @@ class PopoverViewController: NSViewController {
     @IBAction func quit(sender: AnyObject) {
         NSApplication.shared().terminate(sender)
     }
+    
+    @IBAction func showMenu(sender: AnyObject) {
+        print("Show Menu")
+        if let button = sender as? NSButton {
+            let p = NSPoint(x: sender.frame.origin.x, y: sender.frame.origin.y - (sender.frame.height / 2))
+            button.menu?.popUp(positioning: nil, at: p, in: button.superview)
+        }
+    }
+    
+    @IBAction func openPreferences(sender: AnyObject) {
+
+        NSWorkspace.shared().open(Bundle.main.bundleURL.appendingPathComponent("Contents/Preferences/MDictionaryPreferences.app"))
+    }
 }
 
 extension PopoverViewController: NSPopoverDelegate {
